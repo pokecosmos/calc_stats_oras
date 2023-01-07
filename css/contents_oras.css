@@ -41,6 +41,10 @@ input.mega{
 	visibility: hidden;
 }
 
+input.tweetbtn{
+	width: 150px;
+}
+
 /*-- スマホ版非表示設定  --*/
 @media screen and (max-width: 500px){
 	input.pc{
