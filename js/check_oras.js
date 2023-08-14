@@ -301,7 +301,7 @@ function setpokemon(){
 		}
 	}
 	ncalc(0);ncalc(1);ncalc(2);ncalc(3);ncalc(4);ncalc(5);
-	taikyu_hyoji_1();
+	taikyu_hyoji_2();
 	moji();
 }
 //努力値をすべて0にする
@@ -390,17 +390,8 @@ function scalc(){
 }
 
 //耐久振りボタン表示・非表示
-function taikyu_hyoji_1(){//ヌケニン排除
+function taikyu_hyoji_2(){//努力値オーバー排除、性格テキトー・ヌケニン排除
 	var p = document.nForm.elements['pokename'].value;
-	if(p!="ヌケニン"){
-		document.nForm.elements['taikyu'].style.visibility="visible";
-		document.nForm.elements['taikyu2'].style.visibility="visible";
-	}else{
-		document.nForm.elements['taikyu'].style.visibility="hidden";
-		document.nForm.elements['taikyu2'].style.visibility="hidden";
-	}
-}
-function taikyu_hyoji_2(){//努力値オーバー排除、性格テキトー排除
 	j=0; up=0; dw=0;
 	for(i=0; i<6; i++){
 		if((!document.nForm.elements[nn[i]].value)||(document.nForm.elements[dn[i]].value > 252)){
@@ -418,13 +409,17 @@ function taikyu_hyoji_2(){//努力値オーバー排除、性格テキトー排�
 			dw = 1;
 		}
 	}
-	
-	if((j==0)&&(up == dw)){
-		document.nForm.elements['taikyu'].style.visibility="visible";
-		document.nForm.elements['taikyu2'].style.visibility="visible";
-	}else if((j==0)&&(up != dw)){
-		document.nForm.elements['taikyu'].style.visibility="visible";
-		document.nForm.elements['taikyu2'].style.visibility="hidden";
+	if(p!="ヌケニン"){
+		if((j==0)&&(up == dw)){
+			document.nForm.elements['taikyu'].style.visibility="visible";
+			document.nForm.elements['taikyu2'].style.visibility="visible";
+		}else if((j==0)&&(up != dw)){
+			document.nForm.elements['taikyu'].style.visibility="visible";
+			document.nForm.elements['taikyu2'].style.visibility="hidden";
+		}else{
+			document.nForm.elements['taikyu'].style.visibility="hidden";
+			document.nForm.elements['taikyu2'].style.visibility="hidden";
+		}
 	}else{
 		document.nForm.elements['taikyu'].style.visibility="hidden";
 		document.nForm.elements['taikyu2'].style.visibility="hidden";
