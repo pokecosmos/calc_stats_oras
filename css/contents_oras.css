@@ -23,6 +23,12 @@ input.button{
 input.taikyu{
 	width: 65px;
 	padding: 1px;
+	visibility: visible;
+}
+input.taikyu2{
+	width: 90px;
+	padding: 1px;
+	visibility: visible;
 }
 input.updown{
 	width: 19px;
