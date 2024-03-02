@@ -371,7 +371,7 @@ function scalc(){
 	
 	//--麻痺判定
 	if(document.nForm.elements['ch_m'].checked == true){
-			n = Math.floor(n/2);
+			n = Math.floor(n/4);
 	}
 	
 	//--特性判定
